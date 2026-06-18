@@ -121,3 +121,5 @@ The system runs a 4-state machine cycled by the user button B1 (PC13, active low
 | 3 — Angle | Roll / Pitch in degrees | MPU6050 accelerometer, atan2 calculation |
 
 Button debounce: 20ms software debounce to avoid multiple state transitions on a single press.
+
+![Boitier](Boitier_embarqué.jfif)
