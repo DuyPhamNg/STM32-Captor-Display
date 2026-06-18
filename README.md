@@ -109,3 +109,15 @@ Custom enclosure designed to house the PCB and expose:
 - PCB design and hardware integration
 - Full product cycle : firmware → PCB → physical enclosure
 
+## How it works
+
+The system runs a 4-state machine cycled by the user button B1 (PC13, active low):
+
+| State | Display | Description |
+|---|---|---|
+| 0 — Welcome | "Bonjour !" / "Comment ca va ?" | Boot message |
+| 1 — Distance | Distance in cm | HC-SR04 ultrasonic measurement via TIM µs timing |
+| 2 — Temperature | Temperature in °C | ADC acquisition, 8-sample average |
+| 3 — Angle | Roll / Pitch in degrees | MPU6050 accelerometer, atan2 calculation |
+
+Button debounce: 20ms software debounce to avoid multiple state transitions on a single press.
