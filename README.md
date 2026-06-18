@@ -43,13 +43,18 @@ Developed in **C** using STM32CubeIDE and the HAL library.
 
 ```
 Core/
-├── BSP/          # Board support — peripheral init (I2C, UART, ADC, TIM)
-├── Drivers/      # Sensor drivers (HC-SR04, MPU6050, LCD)
-│   ├── hcsr04.c / hcsr04.h
-│   ├── mpu6050.c / mpu6050.h
-│   └── lcd_i2c.c / lcd_i2c.h
-└── App/          # Application logic — acquisition loop, display refresh
-    └── main_app.c
+├── App/
+│   ├── app.c        # State machine — button handling, display logic
+│   └── app.h
+├── Drivers/
+│   ├── hcsr04.c     # HC-SR04 ultrasonic distance driver (TIM µs timing)
+│   ├── hcsr04.h
+│   ├── lcd_i2c.c    # LCD 16x2 I2C driver (PCF8574, 4-bit mode)
+│   ├── lcd_i2c.h
+│   ├── mpu6050.c    # MPU6050 accelerometer/gyroscope driver (I2C, no lib)
+│   └── mpu6050.h
+├── main.c           # Entry point — peripheral init, main loop
+└── main.h           # Pin definitions, HAL handles
 ```
 
 ### Key implementation details
