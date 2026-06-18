@@ -69,16 +69,16 @@ Core/
 
 ## PCB Design — EasyEDA
 
-Custom PCB designed to host the Nucleo board and route all sensor connectors cleanly.
+Custom PCB designed on EasyEDA to integrate the Nucleo L476RG board 
+into a compact standalone system.
 
-- Nucleo L476RG footprint with dedicated headers
+**Design choices:**
+- Nucleo L476RG mounted via dedicated headers
 - Connector blocks for each sensor (HC-SR04, MPU6050, LCD, temperature)
-- Power supply routing (3.3V / 5V)
-- Designed and exported with **EasyEDA**
+- Separate 3.3V and 5V power rails
+- Compact form factor sized for the 3D-printed enclosure
 
-> PCB schematic and Gerber files not included in this repository.
-
----
+> Gerber files and schematic not included in this repository.
 
 ## 3D-Printed Enclosure
 
